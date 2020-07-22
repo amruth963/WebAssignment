@@ -1,12 +1,7 @@
 package com.creditcardpage.testscripts;
 
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import com.common.utils.BrowserUtils;
 import com.common.utils.PageConstants;
 import com.pages.CreditCardPage;
@@ -22,15 +17,15 @@ public class VerifyPillowTotalInCreditCardPageTest extends BrowserUtils{
 	@Test(description = "Verify pillow total between Order Summary and Credit Card page")
 	public void verifyPillowTotalInCreditCardPage() {
 		homePage.launchUrl();
-		AssertJUnit.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
-		AssertJUnit.assertEquals(homePage.clickOnBuyNowBtn(), true);
+		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
+		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
 		switchiFrameOne();
 		String totalPriceInOrderSummaryPage = orderSummaryPage.verifyPillowTotalOnOrderSummaryPage();
 		orderSummaryPage.clickOnContinueBtn();
 		orderSummaryPage.selectCreditCardPaymentOption();
 		String totalPriceInCreditCardPage = creditCardPage.verifyTotalAmountInCreditCardPage();
-		AssertJUnit.assertEquals(totalPriceInCreditCardPage, totalPriceInOrderSummaryPage);
+		Assert.assertEquals(totalPriceInCreditCardPage, totalPriceInOrderSummaryPage);
 	}
 
 }

@@ -3,7 +3,6 @@ package com.common.utils;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -15,8 +14,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class BrowserUtils {
 
@@ -25,7 +24,7 @@ public class BrowserUtils {
 	private boolean flag = true;
 	private static final Logger LOGGER = Logger.getLogger(Class.class.getName());
 
-	@BeforeTest
+	@BeforeClass
 	public void launchBrowser() {
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
@@ -40,7 +39,7 @@ public class BrowserUtils {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
-	@AfterTest
+	@AfterClass
 	public void tearDown() {
 		driver.quit();
 	}

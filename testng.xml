@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="com.common.utils.ListenerTest"></listener>
 	</listeners>
-	<test name="Test">
+	<test thread-count="5" name="Test">
 		<classes>
 			<class
 				name="com.creditcardpage.testscripts.VerifyPillowTotalInCreditCardPageTest" />
@@ -17,16 +17,16 @@
 			<class name="com.common.utils.BrowserUtils" />
 			<class
 				name="com.ordersummarypage.testscripts.VerifyPillowTotalInOrderSummaryTest" />
-			<class name="com.homepage.testscripts.EnterCustomerDetailsTest" />
 			<class
 				name="com.ordersummarypage.testscripts.ClickOnContinueBtnAndSelectPaymentMethodTest" />
+			<class name="com.homepage.testscripts.EnterCustomerDetailsTest" />
 			<class
 				name="com.homepage.testscripts.VerifyPillowAndClickOnBuyNowBtnTest" />
 			<class
 				name="com.homepage.testscripts.EnterCustomerDetailsAndCheoutOutTest" />
+			<class name="com.homepage.testscripts.VerifyPillowTitleTest" />
 			<class
 				name="com.ordersummarypage.testscripts.VerifyCustomerDetailsInOrderSummaryTest" />
-			<class name="com.homepage.testscripts.VerifyPillowTitleTest" />
 			<class
 				name="com.ordersummarypage.testscripts.VerifyPillowNameInOrderSummaryTest" />
 		</classes>

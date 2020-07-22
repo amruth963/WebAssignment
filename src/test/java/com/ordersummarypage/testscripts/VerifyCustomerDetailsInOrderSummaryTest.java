@@ -2,12 +2,6 @@ package com.ordersummarypage.testscripts;
 
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import com.common.utils.BrowserUtils;
 import com.common.utils.PageConstants;
 import com.pages.HomePage;
@@ -21,8 +15,8 @@ public class VerifyCustomerDetailsInOrderSummaryTest extends BrowserUtils{
 	@Test
 	public void verifyCustomerNameInOrderSummary() {
 		homePage.launchUrl();
-		AssertJUnit.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
-		AssertJUnit.assertEquals(homePage.clickOnBuyNowBtn(), true);
+		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
+		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
 		switchiFrameOne();
 		orderSummaryPage.clickOnShippingDetailsTab();
@@ -36,8 +30,8 @@ public class VerifyCustomerDetailsInOrderSummaryTest extends BrowserUtils{
 	@Test
 	public void verifyCustomerEmailInOrderSummary() {
 		homePage.launchUrl();
-		AssertJUnit.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
-		AssertJUnit.assertEquals(homePage.clickOnBuyNowBtn(), true);
+		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
+		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
 		switchiFrameOne();
 		orderSummaryPage.clickOnShippingDetailsTab();
@@ -51,8 +45,8 @@ public class VerifyCustomerDetailsInOrderSummaryTest extends BrowserUtils{
 	@Test
 	public void verifyCustomerPhoneNoInOrderSummary() {
 		homePage.launchUrl();
-		AssertJUnit.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
-		AssertJUnit.assertEquals(homePage.clickOnBuyNowBtn(), true);
+		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
+		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
 		switchiFrameOne();
 		orderSummaryPage.clickOnShippingDetailsTab();
@@ -66,8 +60,8 @@ public class VerifyCustomerDetailsInOrderSummaryTest extends BrowserUtils{
 	@Test
 	public void verifyCustomerAddressInOrderSummary() {
 		homePage.launchUrl();
-		AssertJUnit.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
-		AssertJUnit.assertEquals(homePage.clickOnBuyNowBtn(), true);
+		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
+		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
 		switchiFrameOne();
 		orderSummaryPage.clickOnShippingDetailsTab();

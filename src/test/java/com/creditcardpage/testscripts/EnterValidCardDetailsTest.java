@@ -1,12 +1,7 @@
 package com.creditcardpage.testscripts;
 
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.common.utils.BrowserUtils;
 import com.common.utils.ConfigReader;
 import com.common.utils.PageConstants;
@@ -24,8 +19,8 @@ public class EnterValidCardDetailsTest extends BrowserUtils{
 	@Test(description = "Verify Transaction success message on entering valid card details")
 	public void enterValidCardDetails() {
 		homePage.launchUrl();
-		AssertJUnit.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
-		AssertJUnit.assertEquals(homePage.clickOnBuyNowBtn(), true);
+		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
+		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
 		switchiFrameOne();
 		orderSummaryPage.clickOnContinueBtn();
@@ -36,7 +31,7 @@ public class EnterValidCardDetailsTest extends BrowserUtils{
 		creditCardPage.clickOnPayNowBtn();
 		creditCardPage.enterOTP(configReader.getStaticProperty("otp"));
 		creditCardPage.clickOnOkBtn();
-		AssertJUnit.assertEquals(creditCardPage.getTransactionSuccessMsg(), PageConstants.PURCHASESUCCESSMSG);
+		Assert.assertEquals(creditCardPage.getTransactionSuccessMsg(), PageConstants.PURCHASESUCCESSMSG);
 	}
 
 

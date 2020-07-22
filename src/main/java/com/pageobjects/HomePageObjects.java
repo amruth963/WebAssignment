@@ -17,5 +17,6 @@ public class HomePageObjects {
 	public static By POSTALCODETXTFIELD = By.xpath("//input[@data-reactid=\".0.0.1.0.3.0.0.5.1.0\"]");
 	public static By CHECKOUTBTN = By.xpath("//div[@class='cart-checkout']");
 	public static By PURCHASESUCCESSMSG = By.xpath("//span[@data-reactid='.0.0.0.2.0.1.0.0:0']");
+	
 
 }
