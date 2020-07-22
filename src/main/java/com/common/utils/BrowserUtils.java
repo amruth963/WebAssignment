@@ -139,22 +139,53 @@ public class BrowserUtils {
 
 	}
 
-	public void switchiFrameOne() {
+
+	public void switchiFrameOne(By locator) {
 		try {
-			driver.switchTo().defaultContent();
-			driver.switchTo().frame("snap-midtrans");
+			switchToDefault();
+			WebElement ele = webDriverWait(locator);
+			driver.switchTo().frame(ele);
 		}catch (Exception e) {
 			Assert.fail("Unable to switch to iframe due to " + e.getMessage());
 		}
 	}
 
-	public void switchiFrameTwo() {
+	public void switchiFrameTwo(By parent_iframe_locator) {
 		try {
-			driver.switchTo().defaultContent();
-			driver.switchTo().frame(0);
+			switchToDefault();
+			WebElement parent_iframe_ele = webDriverWait(parent_iframe_locator);
+			driver.switchTo().frame(parent_iframe_ele);
 			driver.switchTo().frame(0);
 		}catch (Exception e) {
 			Assert.fail("Unable to switch to iframe due to " + e.getMessage());
+		}
+	}
+
+	public void switchToiFrame(By locator) {
+		try {
+			WebElement ele = webDriverWait(locator);
+			driver.switchTo().frame(ele);
+		}catch (Exception e) {
+			Assert.fail("Unable to switch to iframe due to " + e.getMessage());
+		}
+	}
+
+	public void switchToChildiFrame(By parent_iframe_locator) {
+		try {
+			switchToDefault();
+			WebElement parent_iframe_ele = webDriverWait(parent_iframe_locator);
+			driver.switchTo().frame(parent_iframe_ele);
+			driver.switchTo().frame(0);
+		}catch (Exception e) {
+			Assert.fail("Unable to switch to iframe due to " + e.getMessage());
+		}
+	}
+
+	public void switchToDefault() {
+		try {
+			driver.switchTo().defaultContent();
+		}catch (Exception e) {
+			Assert.fail("Unable to switch to default content due to " + e.getMessage());
 		}
 	}
 

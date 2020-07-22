@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import com.common.utils.BrowserUtils;
 import com.common.utils.PageConstants;
+import com.pageobjects.CreditCardPageObjects;
 import com.pages.HomePage;
 import com.pages.OrderSummaryPage;
 
@@ -19,7 +20,7 @@ public class VerifyPillowNameInOrderSummaryTest extends BrowserUtils{
 		String pillowTitleInHomePage = homePage.verifyPillowTitle();
 		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
-		switchiFrameOne();
+		switchiFrameOne(CreditCardPageObjects.IFRAMEPARENT);
 		String pillowTitleInOrderSummaryPage = orderSummaryPage.verifyPillowNameInOrderSummaryPage();
 		Assert.assertEquals(pillowTitleInOrderSummaryPage, pillowTitleInHomePage);
 	}

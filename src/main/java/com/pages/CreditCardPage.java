@@ -86,8 +86,9 @@ public class CreditCardPage extends BrowserUtils {
 
 	public boolean enterOTP(String otp) {
 		try {
-			switchiFrameTwo();
-			Thread.sleep(4000);
+			switchiFrameTwo(CreditCardPageObjects.IFRAMEPARENT);
+			Thread.sleep(2000);
+			webDriverWait(CreditCardPageObjects.OTPTXTFIELD);
 			isWebElementDisplayed(CreditCardPageObjects.OTPTXTFIELD);
 			clickOnElementUsingJavaScriptExecutor(CreditCardPageObjects.OTPTXTFIELD);
 			sendKeysOnTxtField(CreditCardPageObjects.OTPTXTFIELD, otp);
@@ -148,6 +149,8 @@ public class CreditCardPage extends BrowserUtils {
 		}
 		return transactionFailureMsg;
 	}
+
+	
 
 
 

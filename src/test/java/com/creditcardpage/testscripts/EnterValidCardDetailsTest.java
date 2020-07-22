@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import com.common.utils.BrowserUtils;
 import com.common.utils.ConfigReader;
 import com.common.utils.PageConstants;
+import com.pageobjects.CreditCardPageObjects;
 import com.pages.CreditCardPage;
 import com.pages.HomePage;
 import com.pages.OrderSummaryPage;
@@ -22,7 +23,7 @@ public class EnterValidCardDetailsTest extends BrowserUtils{
 		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
 		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
-		switchiFrameOne();
+		switchiFrameOne(CreditCardPageObjects.IFRAMEPARENT);
 		orderSummaryPage.clickOnContinueBtn();
 		orderSummaryPage.selectCreditCardPaymentOption();
 		creditCardPage.enterCardNumber(configReader.getStaticProperty("validcardnumber"));

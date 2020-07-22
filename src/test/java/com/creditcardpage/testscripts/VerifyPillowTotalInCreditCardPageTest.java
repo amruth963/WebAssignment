@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import com.common.utils.BrowserUtils;
 import com.common.utils.PageConstants;
+import com.pageobjects.CreditCardPageObjects;
 import com.pages.CreditCardPage;
 import com.pages.HomePage;
 import com.pages.OrderSummaryPage;
@@ -20,7 +21,7 @@ public class VerifyPillowTotalInCreditCardPageTest extends BrowserUtils{
 		Assert.assertEquals(homePage.verifyPillowTitle(), PageConstants.MIDTRANSPILLOWTITLE);
 		Assert.assertEquals(homePage.clickOnBuyNowBtn(), true);
 		homePage.enterCustomerDetailsAndClickOnCheckoutBtn(PageConstants.USERNAME, PageConstants.EMAIL, PageConstants.PHONENO, PageConstants.CITY, PageConstants.ADDRESS, PageConstants.POSTALCODE);
-		switchiFrameOne();
+		switchiFrameOne(CreditCardPageObjects.IFRAMEPARENT);
 		String totalPriceInOrderSummaryPage = orderSummaryPage.verifyPillowTotalOnOrderSummaryPage();
 		orderSummaryPage.clickOnContinueBtn();
 		orderSummaryPage.selectCreditCardPaymentOption();
